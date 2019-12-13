@@ -1949,15 +1949,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['test'],
+  props: ['test', 'auth'],
   data: function data() {
     return {
-      test: this.test + 'aaaa'
+      test2: this.test + 'aaaa',
+      user: this.auth.name
     };
   },
   mounted: function mounted() {
     console.log('Component mounted.');
+    console.log(this.user);
   }
 });
 
@@ -38147,7 +38150,11 @@ var render = function() {
                 [
                   _c("v-card-title", [_vm._v("gfgfjgfkjf")]),
                   _vm._v(
-                    "\n                " + _vm._s(_vm.test) + "\n            "
+                    "\n                " +
+                      _vm._s(_vm.test2) +
+                      "\n                " +
+                      _vm._s(_vm.user) +
+                      "\n            "
                   )
                 ],
                 1
@@ -38184,7 +38191,7 @@ var render = function() {
                     {
                       key: "badge",
                       fn: function() {
-                        return [_vm._v("0")]
+                        return [_vm._v("2")]
                       },
                       proxy: true
                     }

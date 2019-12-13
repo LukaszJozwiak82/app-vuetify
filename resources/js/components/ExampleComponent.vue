@@ -4,7 +4,8 @@
         <div class="pb-4">
             <v-card class="pa-md-10 mx-auto pa-xs-1" width="344" height="250" outlined raised>
                 <v-card-title>gfgfjgfkjf</v-card-title>
-                {{test}}
+                {{test2}}
+                {{user}}
             </v-card>
         </div>
         <v-alert type="success">
@@ -16,7 +17,7 @@
         </div>
         <div class="text-center">
             <v-badge>
-                <template v-slot:badge>0</template>
+                <template v-slot:badge>2</template>
                 <v-icon>mdi-email</v-icon>
             </v-badge>
         </div>
@@ -26,14 +27,16 @@
 
 <script>
 export default {
-    props: ['test'],
+    props: ['test','auth'],
     data: function () {
         return {
-            test: this.test + 'aaaa'
+            test2: this.test + 'aaaa',
+            user: this.auth.name
         }
     },
     mounted() {
         console.log('Component mounted.')
+        console.log(this.user)
     }
 }
 </script>
