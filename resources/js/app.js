@@ -5,11 +5,13 @@
  */
 
 require('./bootstrap');
-import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
-import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import Vuetify from 'vuetify'
+import '@mdi/font/css/materialdesignicons.css'; // Ensure you are using css-loader
+import 'material-design-icons-iconfont/dist/material-design-icons.css';
+import axios from 'axios';
+import Vuetify from 'vuetify';
 window.Vue = require('vue');
 Vue.use(Vuetify);
+Vue.use(axios);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
