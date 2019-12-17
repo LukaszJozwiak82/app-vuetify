@@ -1962,6 +1962,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['test', 'auth'],
   data: function data() {
@@ -1976,7 +1982,7 @@ __webpack_require__.r(__webpack_exports__);
     get_users_data: function get_users_data() {
       var _this = this;
 
-      axios.get('http://app-vuetify.test:8080/api/user', {
+      axios.get('/api/user', {
         headers: {
           Authorization: 'Bearer ' + this.access_token
         }
@@ -38179,7 +38185,7 @@ var render = function() {
                   }
                 },
                 [
-                  _c("v-card-title", [_vm._v("gfgfjgfkjf")]),
+                  _c("v-card-title", [_vm._v("Karta")]),
                   _vm._v(
                     "\n                " +
                       _vm._s(_vm.test2) +
@@ -38233,46 +38239,56 @@ var render = function() {
               )
             ],
             1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "table",
-        [
-          _vm._m(0),
+          ),
           _vm._v(" "),
-          _vm._l(_vm.user_data, function(item) {
-            return _c("tr", [
-              _c("td", [_vm._v(_vm._s(item.id))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(item.name))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(item.email))])
+          _c("v-simple-table", {
+            attrs: { dark: "" },
+            scopedSlots: _vm._u([
+              {
+                key: "default",
+                fn: function() {
+                  return [
+                    _c("thead", [
+                      _c("tr", [
+                        _c("th", { staticClass: "text-left" }, [_vm._v("ID")]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "text-left" }, [
+                          _vm._v("Name")
+                        ]),
+                        _vm._v(" "),
+                        _c("th", { staticClass: "text-left" }, [
+                          _vm._v("Email")
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.user_data, function(item) {
+                        return _c("tr", { key: item.name }, [
+                          _c("td", [_vm._v(_vm._s(item.id))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.name))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.email))])
+                        ])
+                      }),
+                      0
+                    )
+                  ]
+                },
+                proxy: true
+              }
             ])
           })
         ],
-        2
+        1
       )
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("th", [_vm._v("id")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("name")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("email")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

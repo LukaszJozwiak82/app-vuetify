@@ -3,7 +3,7 @@
     <v-app>
         <div class="pb-4">
             <v-card class="pa-md-10 mx-auto pa-xs-1" width="344" height="250" outlined raised>
-                <v-card-title>gfgfjgfkjf</v-card-title>
+                <v-card-title>Karta</v-card-title>
                 {{test2}}
                 {{user}}
             </v-card>
@@ -21,25 +21,31 @@
                 <v-icon>mdi-email</v-icon>
             </v-badge>
         </div>
+        <v-simple-table dark>
+            <template v-slot:default>
+                <thead>
+                    <tr>
+                        <th class="text-left">ID</th>
+                        <th class="text-left">Name</th>
+                        <th class="text-left">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in user_data" :key="item.name">
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.email }}</td>
+                    </tr>
+                </tbody>
+            </template>
+        </v-simple-table>
     </v-app>
-    <table>
-      <tr>
-        <th>id</th>
-        <th>name</th>
-        <th>email</th>
-      </tr>
-      <tr v-for="item in user_data">
-        <td>{{item.id}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.email}}</td>
-      </tr>
-    </table>
 </div>
 </template>
 
 <script>
 export default {
-    props: ['test','auth'],
+    props: ['test', 'auth'],
     data: function () {
         return {
             test2: this.test + 'aaaa',
@@ -48,25 +54,25 @@ export default {
             user_data: ''
         }
     },
-    methods:{
-    get_users_data: function(){
-        axios.get('http://app-vuetify.test:8080/api/user',{
-          headers: {
-             Authorization: 'Bearer ' + this.access_token
-           }
-        })
-        .then(response => { 
-              this.user_data = response['data'];
-              return this.user_data;     
-          })
-        .catch(response => {
-            console.log(response)
-        });
-      }
+    methods: {
+        get_users_data: function () {
+            axios.get('/api/user', {
+                    headers: {
+                        Authorization: 'Bearer ' + this.access_token
+                    }
+                })
+                .then(response => {
+                    this.user_data = response['data'];
+                    return this.user_data;
+                })
+                .catch(response => {
+                    console.log(response)
+                });
+        }
     },
 
     mounted() {
-      this.get_users_data();
+        this.get_users_data();
         console.log('Component mounted.')
         console.log(this.user)
     }
