@@ -14,9 +14,7 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    header('Content-type:application/json');
-
-    return $request->user();
+    return response(['user' => $request->user(), 'text' => 'przykladowy tekst']);
 });
 
 Route::post('/register', 'Api\AuthController@register');
