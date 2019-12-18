@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'TestController@index')->name('test');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::group(['middleware' => 'auth'], function () {
-    Route::get('/test', 'TestController@index')->name('test');
-});
+// Route::group(['middleware' => 'auth'], function () {
+//     Route::get('/test', 'TestController@index')->name('test');
+// });

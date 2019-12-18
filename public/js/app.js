@@ -1968,12 +1968,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['test', 'auth'],
   data: function data() {
     return {
       test2: this.test + 'aaaa',
-      user: this.auth.name,
+      user: '',
       access_token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYWY0MjViM2RlNjczMDU2NTI5MDg2NjJkMmE0YWU3ZGQ1NzBhNTU1MjFiNWIxZjg5Mjg0MWRhZGRkMWYwNWMzZjAwNWU4Mjg4YWY3OTNjOTAiLCJpYXQiOjE1NzY1NzQ0ODMsIm5iZiI6MTU3NjU3NDQ4MywiZXhwIjoxNjA4MTk2ODgzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.o_9PaG9GbI-5Fs8l2gpXBlrAho2JxPlwvLmGG7gSId5SrBP428DXJfSqHodlZJwlkPOJ_JNg-jRtb8G8KqGJSy7Xkx9TeJySJqWZhwpH5ZI34tQqxjhbSk8h16J25mYn4ZRybPgQ8ES0-igSemS9OuTK9gpUrNwpDB44ER2T5iT57uAneguHAP5P_gd9RMvtvAysizKCkSRjg0hMiMmMtafw6iUJMAdSNlJwaBZciuuirZrpOkHsQwoabf_ZnUeIENqv0yGth7m9o8YFdyOSE88Lc_F1VAApWumWqeUYTV_CKlr3y3-Sf5TdTNTuwPWkLqhMaAoEmK1XiF0YA-6iJ_f4ZheXg9PNLaKoPyURBRMxU5OU-rknlsZorPAaEpIH_90ltcZkicb7l8tvw7oQja69WN5DFBrBC-gtuDraFyMPgrI4vhy0bmu28I1mDJOyWH_3sOAUjmWzIXEu3YPlIDBHunjzlnlOWxZtbB8Wx_J6dCBBTd6ds2i9dgHL63SssN_2OLQJ9VxxbVrwS7zAEI-ftS_1dXsDjjwi-ngJLLI7owOWSM01kVaB9R1sZB9jAFrYsErhFiqpdzR6k-mphtYF6oI0CBb92Wa29bckah-9KFAK_RRehygFy_b-bHNhBM_-vgOukPFt7ALB0sltqTVlqaNAE3Oq5mczbcJWhNU',
       user_data: ''
     };
@@ -1984,7 +2002,8 @@ __webpack_require__.r(__webpack_exports__);
 
       axios.get('/api/user', {
         headers: {
-          Authorization: 'Bearer ' + this.access_token
+          Authorization: 'Bearer ' + this.access_token,
+          'Content-type': 'application/json'
         }
       }).then(function (response) {
         _this.user_data = response['data'];
@@ -1995,6 +2014,10 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    if (this.auth) {
+      this.user = this.auth.name;
+    }
+
     this.get_users_data();
     console.log('Component mounted.');
     console.log(this.user);
@@ -38171,15 +38194,90 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "pb-4" },
+            {
+              staticClass:
+                "pb-4 d-flex align-content-space-between flex-wrap flex-md-wrap"
+            },
             [
               _c(
                 "v-card",
                 {
-                  staticClass: "pa-md-10 mx-auto pa-xs-1",
+                  staticClass: "mx-auto pa-xs-1",
                   attrs: {
-                    width: "344",
-                    height: "250",
+                    width: "180",
+                    height: "180",
+                    outlined: "",
+                    raised: ""
+                  }
+                },
+                [
+                  _c("v-card-title", [_vm._v("Karta")]),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.test2) +
+                      "\n                " +
+                      _vm._s(_vm.user) +
+                      "\n            "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                {
+                  staticClass: "pa-5 mx-auto pa-xs-1",
+                  attrs: {
+                    width: "180",
+                    height: "180",
+                    outlined: "",
+                    raised: ""
+                  }
+                },
+                [
+                  _c("v-card-title", [_vm._v("Karta")]),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.test2) +
+                      "\n                " +
+                      _vm._s(_vm.user) +
+                      "\n            "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                {
+                  staticClass: "mx-auto pa-xs-1",
+                  attrs: {
+                    width: "180",
+                    height: "180",
+                    outlined: "",
+                    raised: ""
+                  }
+                },
+                [
+                  _c("v-card-title", [_vm._v("Karta")]),
+                  _vm._v(
+                    "\n                " +
+                      _vm._s(_vm.test2) +
+                      "\n                " +
+                      _vm._s(_vm.user) +
+                      "\n            "
+                  )
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-card",
+                {
+                  staticClass: "mx-auto pa-xs-1",
+                  attrs: {
+                    width: "180",
+                    height: "180",
                     outlined: "",
                     raised: ""
                   }
@@ -38241,46 +38339,61 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("v-simple-table", {
-            attrs: { dark: "" },
-            scopedSlots: _vm._u([
-              {
-                key: "default",
-                fn: function() {
-                  return [
-                    _c("thead", [
-                      _c("tr", [
-                        _c("th", { staticClass: "text-left" }, [_vm._v("ID")]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-left" }, [
-                          _vm._v("Name")
-                        ]),
-                        _vm._v(" "),
-                        _c("th", { staticClass: "text-left" }, [
-                          _vm._v("Email")
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.user_data, function(item) {
-                        return _c("tr", { key: item.name }, [
-                          _c("td", [_vm._v(_vm._s(item.id))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.name))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.email))])
-                        ])
-                      }),
-                      0
+          this.user != ""
+            ? _c(
+                "div",
+                [
+                  _c("v-simple-table", {
+                    attrs: { dark: "" },
+                    scopedSlots: _vm._u(
+                      [
+                        {
+                          key: "default",
+                          fn: function() {
+                            return [
+                              _c("thead", [
+                                _c("tr", [
+                                  _c("th", { staticClass: "text-left" }, [
+                                    _vm._v("ID")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-left" }, [
+                                    _vm._v("Name")
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("th", { staticClass: "text-left" }, [
+                                    _vm._v("Email")
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "tbody",
+                                _vm._l(_vm.user_data, function(item) {
+                                  return _c("tr", { key: item.name }, [
+                                    _c("td", [_vm._v(_vm._s(item.id))]),
+                                    _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(item.name))]),
+                                    _vm._v(" "),
+                                    _c("td", [_vm._v(_vm._s(item.email))])
+                                  ])
+                                }),
+                                0
+                              )
+                            ]
+                          },
+                          proxy: true
+                        }
+                      ],
+                      null,
+                      false,
+                      1189462467
                     )
-                  ]
-                },
-                proxy: true
-              }
-            ])
-          })
+                  })
+                ],
+                1
+              )
+            : _vm._e()
         ],
         1
       )

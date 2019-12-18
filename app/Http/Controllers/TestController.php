@@ -6,6 +6,6 @@ class TestController extends Controller
 {
     public function index()
     {
-        return View('test', ['test' => 'Test 1222']);
+        return View('welcome', ['test' => 'Test 1222']);
     }
 }
