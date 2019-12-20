@@ -17,13 +17,11 @@
             @endif --}}
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                
+                <example-component
+                            :auth='@json(Auth::user())' 
+                            :categories='@json($categories)'
+                            ></example-component>
             </div>
-            <example-component
-                        :auth='@json(Auth::user())' 
-                        :categories='@json($categories)'
-                        ></example-component>
         </div>
 @endsection
