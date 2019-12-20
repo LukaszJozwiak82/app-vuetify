@@ -1976,7 +1976,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["auth", "categories", "advertisements"],
   data: function data() {
@@ -38237,7 +38236,7 @@ var render = function() {
                     [
                       _c(
                         "v-layout",
-                        { attrs: { "justify-center": "" } },
+                        { attrs: { "justify-center": "", "align-center": "" } },
                         [
                           _c("v-card-title", [_vm._v(_vm._s(category.name))]),
                           _vm._v(" "),
@@ -38253,19 +38252,6 @@ var render = function() {
                 ]
               )
             }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-layout",
-            { attrs: { "justify-center": "", "align-center": "" } },
-            [
-              _c("v-icon", { staticClass: "mr-3" }, [_vm._v("error_outline")]),
-              _vm._v(" "),
-              _c("div", [
-                _vm._v("This is a fine place for a warning to appear")
-              ])
-            ],
             1
           ),
           _vm._v(" "),
@@ -38324,7 +38310,18 @@ var render = function() {
                 1
               )
             : _vm._e(),
-          _vm._v("\n        Njnowsze ogłoszenia\n        "),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { "justify-center": "", "align-center": "", "mb-6": "" } },
+            [
+              _c("v-icon", { staticClass: "mr-3" }, [_vm._v("error_outline")]),
+              _vm._v(" "),
+              _c("div", [_vm._v("Najnowsze ogłoszenia")])
+            ],
+            1
+          ),
+          _vm._v(" "),
           _c(
             "div",
             {
