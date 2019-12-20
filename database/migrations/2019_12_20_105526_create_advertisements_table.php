@@ -19,6 +19,7 @@ class CreateAdvertisementsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->decimal('price', 10, 2);
+            $table->smallInteger('active')->default(0);
             $table->timestamps();
         });
     }

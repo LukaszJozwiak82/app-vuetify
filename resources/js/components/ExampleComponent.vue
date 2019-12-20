@@ -32,6 +32,16 @@
             </v-simple-table>
         </div>
         Njnowsze ogłoszenia
+        <div class="pb-4 mb-10 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start">
+            <v-card v-for="advertisement in advertisements" v-bind:key="advertisement.id" class="mx-auto pa-xs-1 mb-2" width="200" height="auto" outlined raised color="#f2f2f2">
+                <a v-bind:href="'#'">
+                    <v-card-title class="mt-6">{{ advertisement.title }}</v-card-title>
+                    <v-card-subtitle>{{ advertisement.price }} PLN</v-card-subtitle>
+                    <v-card-text>{{ advertisement.description }}</v-card-text>
+                </a>
+                {{user}}
+            </v-card>
+        </div>
         <footer-component :msg="message"></footer-component>
     </v-app>
 </v-container>
@@ -39,7 +49,7 @@
 
 <script>
 export default {
-    props: ["auth", "categories"],
+    props: ["auth", "categories", "advertisements"],
     data: function () {
         return {
             message: "test wiadomosci",

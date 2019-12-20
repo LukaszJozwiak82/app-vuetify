@@ -10,6 +10,7 @@ $factory->define(App\Advertisement::class, function (Faker $faker) {
         'user_id' => $faker->randomDigitNotNull,
         'title' => $faker->sentence($nbWords = 3, $variableNbWords = true),
         'description' => $faker->sentence($nbWords = 20, $variableNbWords = true),
-        'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 6, $max = NULL),
+        'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 6, $max = 1000),
+        'active' => $faker->numberBetween($min = 0, $max = 1),
     ];
 });

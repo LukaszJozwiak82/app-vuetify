@@ -1962,8 +1962,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["auth", "categories"],
+  props: ["auth", "categories", "advertisements"],
   data: function data() {
     return {
       message: "test wiadomosci",
@@ -38291,6 +38301,54 @@ var render = function() {
               )
             : _vm._e(),
           _vm._v("\n        Njnowsze ogłoszenia\n        "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "pb-4 mb-10 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start"
+            },
+            _vm._l(_vm.advertisements, function(advertisement) {
+              return _c(
+                "v-card",
+                {
+                  key: advertisement.id,
+                  staticClass: "mx-auto pa-xs-1 mb-2",
+                  attrs: {
+                    width: "200",
+                    height: "auto",
+                    outlined: "",
+                    raised: "",
+                    color: "#f2f2f2"
+                  }
+                },
+                [
+                  _c(
+                    "a",
+                    { attrs: { href: "#" } },
+                    [
+                      _c("v-card-title", { staticClass: "mt-6" }, [
+                        _vm._v(_vm._s(advertisement.title))
+                      ]),
+                      _vm._v(" "),
+                      _c("v-card-subtitle", [
+                        _vm._v(_vm._s(advertisement.price) + " PLN")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-card-text", [
+                        _vm._v(_vm._s(advertisement.description))
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(
+                    "\n                " + _vm._s(_vm.user) + "\n            "
+                  )
+                ]
+              )
+            }),
+            1
+          ),
+          _vm._v(" "),
           _c("footer-component", { attrs: { msg: _vm.message } })
         ],
         1

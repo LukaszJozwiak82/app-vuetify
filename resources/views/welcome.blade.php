@@ -21,6 +21,7 @@
                 <example-component
                             :auth='@json(Auth::user())' 
                             :categories='@json($categories)'
+                            :advertisements = '@json($advertisements)'
                             ></example-component>
             </div>
         </div>
