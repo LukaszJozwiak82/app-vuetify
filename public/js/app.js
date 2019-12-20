@@ -1956,26 +1956,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["auth", "categories", "advertisements"],
   data: function data() {
@@ -38223,7 +38203,7 @@ var render = function() {
                   staticClass: "mx-auto pa-xs-1 mb-2 justify-center",
                   attrs: {
                     width: "180",
-                    height: "180",
+                    height: "60",
                     outlined: "",
                     raised: "",
                     color: "#f2f2f2"
@@ -38255,65 +38235,9 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          this.user != ""
-            ? _c(
-                "div",
-                [
-                  _c("v-simple-table", {
-                    attrs: { dark: "" },
-                    scopedSlots: _vm._u(
-                      [
-                        {
-                          key: "default",
-                          fn: function() {
-                            return [
-                              _c("thead", [
-                                _c("tr", [
-                                  _c("th", { staticClass: "text-left" }, [
-                                    _vm._v("ID")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "text-left" }, [
-                                    _vm._v("Name")
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("th", { staticClass: "text-left" }, [
-                                    _vm._v("Email")
-                                  ])
-                                ])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "tbody",
-                                _vm._l(_vm.user_data, function(item) {
-                                  return _c("tr", { key: item.name }, [
-                                    _c("td", [_vm._v(_vm._s(item.id))]),
-                                    _vm._v(" "),
-                                    _c("td", [_vm._v(_vm._s(item.name))]),
-                                    _vm._v(" "),
-                                    _c("td", [_vm._v(_vm._s(item.email))])
-                                  ])
-                                }),
-                                0
-                              )
-                            ]
-                          },
-                          proxy: true
-                        }
-                      ],
-                      null,
-                      false,
-                      1189462467
-                    )
-                  })
-                ],
-                1
-              )
-            : _vm._e(),
-          _vm._v(" "),
           _c(
             "v-layout",
-            { attrs: { "justify-center": "", "align-center": "", "mb-6": "" } },
+            { attrs: { "justify-center": "", "align-center": "", "mb-2": "" } },
             [
               _c("v-icon", { staticClass: "mr-3" }, [_vm._v("error_outline")]),
               _vm._v(" "),
