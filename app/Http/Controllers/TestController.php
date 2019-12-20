@@ -17,7 +17,7 @@ class TestController extends Controller
     public function index()
     {
         $categories = Category::all();
-        $advertisements = $this->advertisement::where('active', 1)->orderBy('id', 'desc')->take(3)->get();
+        $advertisements = $this->advertisement::where('active', 1)->orderBy('id', 'desc')->take(5)->get();
         // dd($categories);
         return View('welcome', ['categories' => $categories, 'advertisements' => $advertisements]);
     }

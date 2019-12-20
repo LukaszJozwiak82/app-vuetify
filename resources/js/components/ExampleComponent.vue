@@ -3,14 +3,19 @@
     <v-app>
         <!-- <div class="d-flex child-flex flex-wrap"> -->
         <div class="pb-4 mb-10 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start">
-            <v-card v-for="category in categories" v-bind:key="category.id" class="mx-auto pa-xs-1 mb-2" width="180" height="180" outlined raised color="#f2f2f2">
+            <v-card v-for="category in categories" v-bind:key="category.id" class="mx-auto pa-xs-1 mb-2 justify-center" width="180" height="180" outlined raised color="#f2f2f2">
                 <a v-bind:href="'#'">
-                    <v-card-title class="mt-6">{{ category.name }}</v-card-title>
+                  <v-layout justify-center>
+                    <v-card-title>{{ category.name }}</v-card-title>
+                    <v-icon x-large>info</v-icon>
+                  </v-layout>
                 </a>
-                {{user}}
             </v-card>
         </div>
-
+        <v-layout justify-center align-center>
+          <v-icon class="mr-3">error_outline</v-icon>
+          <div>This is a fine place for a warning to appear</div>
+        </v-layout> 
         <div v-if="this.user != ''">
             <v-simple-table dark>
                 <template v-slot:default>

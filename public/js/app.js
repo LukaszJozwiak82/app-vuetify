@@ -1972,6 +1972,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["auth", "categories", "advertisements"],
   data: function data() {
@@ -38216,7 +38221,7 @@ var render = function() {
                 "v-card",
                 {
                   key: category.id,
-                  staticClass: "mx-auto pa-xs-1 mb-2",
+                  staticClass: "mx-auto pa-xs-1 mb-2 justify-center",
                   attrs: {
                     width: "180",
                     height: "180",
@@ -38230,18 +38235,37 @@ var render = function() {
                     "a",
                     { attrs: { href: "#" } },
                     [
-                      _c("v-card-title", { staticClass: "mt-6" }, [
-                        _vm._v(_vm._s(category.name))
-                      ])
+                      _c(
+                        "v-layout",
+                        { attrs: { "justify-center": "" } },
+                        [
+                          _c("v-card-title", [_vm._v(_vm._s(category.name))]),
+                          _vm._v(" "),
+                          _c("v-icon", { attrs: { "x-large": "" } }, [
+                            _vm._v("info")
+                          ])
+                        ],
+                        1
+                      )
                     ],
                     1
-                  ),
-                  _vm._v(
-                    "\n                " + _vm._s(_vm.user) + "\n            "
                   )
                 ]
               )
             }),
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-layout",
+            { attrs: { "justify-center": "", "align-center": "" } },
+            [
+              _c("v-icon", { staticClass: "mr-3" }, [_vm._v("error_outline")]),
+              _vm._v(" "),
+              _c("div", [
+                _vm._v("This is a fine place for a warning to appear")
+              ])
+            ],
             1
           ),
           _vm._v(" "),
