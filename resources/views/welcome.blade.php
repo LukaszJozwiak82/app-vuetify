@@ -21,7 +21,9 @@
                     Laravel
                 </div>
             </div>
-            <example-component :test='@json($test)'
-                        :auth='@json(Auth::user())'></example-component>
+            <example-component
+                        :auth='@json(Auth::user())' 
+                        :categories='@json($categories)'
+                        ></example-component>
         </div>
 @endsection

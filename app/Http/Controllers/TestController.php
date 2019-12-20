@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+
 class TestController extends Controller
 {
     public function index()
     {
-        return View('welcome', ['test' => 'Test 1222']);
+        $categories = Category::all();
+        // dd($categories);
+        return View('welcome', ['categories' => $categories]);
     }
 }
