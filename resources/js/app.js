@@ -9,9 +9,12 @@ import '@mdi/font/css/materialdesignicons.css'; // Ensure you are using css-load
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import axios from 'axios';
 import Vuetify from 'vuetify';
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css'
 window.Vue = require('vue');
 Vue.use(Vuetify);
 Vue.use(axios);
+Vue.use(ElementUI);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -23,8 +26,9 @@ Vue.use(axios);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('main-component', require('./components/MainComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
+Vue.component('createad-component', require('./components/CreateAdComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
