@@ -18,6 +18,7 @@
 Route::get('/', 'TestController@index')->name('test');
 Route::group(['prefix' => 'advertisement'], function () {
     Route::get('/create', 'AdvertisementController@create')->name('advertisement.create');
+    Route::post('/store', 'AdvertisementController@store')->name('advertisement.store');
 });
 
 Auth::routes();

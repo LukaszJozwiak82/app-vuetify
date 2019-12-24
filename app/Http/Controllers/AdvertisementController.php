@@ -43,27 +43,28 @@ class AdvertisementController extends Controller
      */
     public function store(Request $request)
     {
-        $user = Auth::user();
-        $title = $request->title;
-        $description = $request->description;
-        $images = $request->images;
+        // $user = Auth::user();
+        // $title = $request->title;
+        // $description = $request->description;
+        // $images = $request->images;
 
-        $advertisement = Advertisement::create([
-            'title' => $title,
-            'description' => $description,
-            'user_id' => $user->id,
-        ]);
+        // $advertisement = Advertisement::create([
+        //     'title' => $title,
+        //     'description' => $description,
+        //     'user_id' => $user->id,
+        // ]);
 
-        //store images
-        foreach ($images as $image) {
-            $imagePath = Storage::disk('uploads')->put($user->email . '/advertisements', $image);
-            PostImage::create([
-                'advertisement_image_caption' => $title,
-                'advertisement_image_path' => '/uploads/' . $imagePath,
-                'advertisement_id' => $advertisement->id,
-            ]);
-        }
-        return response()->json(['error' => false, 'data' => $advertisement]);
+        // //store images
+        // foreach ($images as $image) {
+        //     $imagePath = Storage::disk('uploads')->put($user->email . '/advertisements', $image);
+        //     PostImage::create([
+        //         'advertisement_image_caption' => $title,
+        //         'advertisement_image_path' => '/uploads/' . $imagePath,
+        //         'advertisement_id' => $advertisement->id,
+        //     ]);
+        // }
+        // return response()->json(['error' => false, 'data' => $advertisement]);
+        dd($request);
     }
 
     /**
