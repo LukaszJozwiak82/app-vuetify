@@ -13,16 +13,15 @@
                     <v-col cols="12" sm="6" md="6">
                         <v-text-field label="Cena" placeholder="Cena" outlined></v-text-field>
                     </v-col>
-                    <div>
-                        <el-upload  action="/" list-type="picture-card"
-                        :on-preview="handlePictureCardPreview"
-                        :on-change="updateImageList"
-                        :auto-upload="false"
-                        >
-                        <i class="el-icon-plus"></i>
-                        </el-upload>
-                    </div>
                 </v-row>
+                <div>
+                    <el-upload action="/" list-type="picture-card" :on-preview="handlePictureCardPreview" :on-change="updateImageList" :auto-upload="false">
+                        <i class="el-icon-plus"></i>
+                    </el-upload>
+                </div>
+                <div class="my-2">
+                    <v-btn color="warning" dark outlined>Zapisz</v-btn>
+                </div>
             </v-container>
         </v-form>
         <footer-component />
@@ -41,11 +40,11 @@ export default {
         };
     },
     methods: {
-        updateImageList(file){
+        updateImageList(file) {
             this.imageList.push(file.raw);
-            console.log(file.raw    );
+            console.log(file.raw);
         },
-        handlePictureCardPreview(file){
+        handlePictureCardPreview(file) {
             this.dialogImageUrl = file.url;
             this.dialogVisible = true;
         }
