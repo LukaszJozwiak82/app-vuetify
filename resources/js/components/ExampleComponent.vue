@@ -6,7 +6,7 @@
             <v-card v-for="category in categories" v-bind:key="category.id" class="mx-auto pa-xs-1 mb-2 justify-center" width="180" height="60" outlined raised color="#f2f2f2">
                 <a v-bind:href="'#'">
                   <v-layout justify-center align-center>
-                    <v-card-title>{{ category.name }}</v-card-title>
+                    <v-card-title class="subtitle-1">{{ category.name }}</v-card-title>
                     <v-icon x-large>info</v-icon>
                   </v-layout>
                 </a>
@@ -15,7 +15,7 @@
         <v-layout justify-center align-center mb-2>
           <v-icon class="mr-3">error_outline</v-icon>
           <div>Najnowsze ogłoszenia</div>
-        </v-layout> 
+        </v-layout>
         <div class="pb-4 mb-10 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start">
             <v-card v-for="advertisement in advertisements" v-bind:key="advertisement.id" class="mx-auto pa-xs-1 mb-2" width="200" height="auto" outlined raised color="#f2f2f2">
                 <a v-bind:href="'#'">

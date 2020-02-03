@@ -38218,7 +38218,9 @@ var render = function() {
                         "v-layout",
                         { attrs: { "justify-center": "", "align-center": "" } },
                         [
-                          _c("v-card-title", [_vm._v(_vm._s(category.name))]),
+                          _c("v-card-title", { staticClass: "subtitle-1" }, [
+                            _vm._v(_vm._s(category.name))
+                          ]),
                           _vm._v(" "),
                           _c("v-icon", { attrs: { "x-large": "" } }, [
                             _vm._v("info")
@@ -88465,8 +88467,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\laragon\www\app-vuetify\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\app-vuetify\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon2\www\app-vuetify\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon2\www\app-vuetify\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
