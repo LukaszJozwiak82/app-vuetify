@@ -66,7 +66,7 @@ class AdvertisementController extends Controller
         // return response()->json(['error' => false, 'data' => $advertisement]);
         // dd($request);
         foreach ($images as $key => $image) {
-            echo $image[$key];
+            echo $image."<br>" ;
         }
     }
 
