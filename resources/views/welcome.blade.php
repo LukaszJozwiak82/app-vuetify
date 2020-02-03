@@ -18,11 +18,11 @@
 
             <div class="content">
                 
-                <example-component
+                <main-component
                             :auth='@json(Auth::user())' 
                             :categories='@json($categories)'
                             :advertisements = '@json($advertisements)'
-                            ></example-component>
+                            />
             </div>
         </div>
 @endsection
