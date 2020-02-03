@@ -8,7 +8,7 @@
                         <v-col cols="12" sm="6" md="6">
                             <v-text-field
                                 v-model="title"
-                                :name="'name'"
+                                name="title"
                                 label="Nazwa ogłoszenia"
                                 placeholder="Nazwa"
                                 outlined
@@ -17,9 +17,9 @@
                         <v-col cols="12" sm="6" md="6">
                             <v-textarea
                                 outlined
-                                name="input-7-4"
+                                v-model="description"
+                                name="description"
                                 label="Opis"
-                                value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
                             ></v-textarea>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
@@ -72,6 +72,7 @@ export default {
             dialogVisible: false,
             imageList: [],
             title: "",
+            description: "",
             csrf: window.Laravel.csrfToken
         };
     },
@@ -85,16 +86,12 @@ export default {
             this.dialogVisible = true;
         },
         submit() {
-            console.log("123");
             let formData = new FormData();
             formData.append("title", this.title);
+            formData.append("description", this.description);
             foreach(this.imageList, function(key, image) {
-                // formData.append(`images[${key}]`, image);
                 formData.append(`images[${key}]`, image);
             });
-            console.log(formData.get("title"));
-            console.log(formData.get("images[0]"));
-            console.log(formData.get("images[1]"));
         }
     },
 

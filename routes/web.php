@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,9 +13,14 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+use Illuminate\Support\Facades\Auth;
+
+Route::get('pass', function () {
+    $user = User::find(1);
+    $user->password = bcrypt('start1234');
+    $user->save();
+    return 'hasło zmienione';
+});
 
 Route::get('/', 'TestController@index')->name('test');
 Route::group(['prefix' => 'advertisement'], function () {

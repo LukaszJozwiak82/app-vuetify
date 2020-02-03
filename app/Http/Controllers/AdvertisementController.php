@@ -43,16 +43,17 @@ class AdvertisementController extends Controller
      */
     public function store(Request $request)
     {
-        // $user = Auth::user();
-        // $title = $request->title;
-        // $description = $request->description;
+        $user = Auth::user();
+        $title = $request->title;
+        $description = $request->description;
         $images = $request->images;
 
-        // $advertisement = Advertisement::create([
-        //     'title' => $title,
-        //     'description' => $description,
-        //     'user_id' => $user->id,
-        // ]);
+        $advertisement = Advertisement::create([
+            'title' => $title,
+            'description' => $description,
+            'user_id' => $user->id,
+            'price' => 1,
+        ]);
 
         // //store images
         // foreach ($images as $image) {
@@ -65,9 +66,10 @@ class AdvertisementController extends Controller
         // }
         // return response()->json(['error' => false, 'data' => $advertisement]);
         // dd($request);
-        foreach ($images as $key => $image) {
-            echo $image."<br>" ;
-        }
+        // foreach ($images as $key => $image) {
+        //     echo $image."<br>" ;
+        // }
+        return 'zapisano '.$title.$description;
     }
 
     /**

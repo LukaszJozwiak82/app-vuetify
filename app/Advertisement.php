@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Advertisement extends Model
 {
-    protected $fillable = ['title', 'description', 'price', 'active'];
+    protected $fillable = ['user_id','title', 'description', 'price', 'active'];
 
     public function author()
     {
