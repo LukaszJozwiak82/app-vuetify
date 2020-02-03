@@ -46,7 +46,7 @@ class AdvertisementController extends Controller
         // $user = Auth::user();
         // $title = $request->title;
         // $description = $request->description;
-        // $images = $request->images;
+        $images = $request->images;
 
         // $advertisement = Advertisement::create([
         //     'title' => $title,
@@ -64,7 +64,10 @@ class AdvertisementController extends Controller
         //     ]);
         // }
         // return response()->json(['error' => false, 'data' => $advertisement]);
-        dd($request);
+        // dd($request);
+        foreach ($images as $key => $image) {
+            echo $image[$key];
+        }
     }
 
     /**
