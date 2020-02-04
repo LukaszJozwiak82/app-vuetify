@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Advertisement;
 use App\PostImage;
 use Auth;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpKernel\HttpCache\Store;
 use View;
 
@@ -56,15 +56,17 @@ class AdvertisementController extends Controller
             'price' => $price,
         ]);
 
-        // //store images
-        // foreach ($images as $image) {
-        //     $imagePath = Storage::disk('uploads')->put($user->email . '/advertisements', $image);
-        //     PostImage::create([
-        //         'advertisement_image_caption' => $title,
-        //         'advertisement_image_path' => '/uploads/' . $imagePath,
-        //         'advertisement_id' => $advertisement->id,
-        //     ]);
-        // }
+        //store images
+        foreach ($images as $image) {
+            $imagePath = $user->id;
+            Storage::disk('uploads')->put($imagePath, $image);
+            PostImage::create([
+                'advertisement_id' => $advertisement->id,
+                'advertisement_image_path' => '/uploads/' . $imagePath,
+                'advertisement_image_caption' => $title,
+            ]);
+            // echo $image .  "  " . $imagePath . "<br>";
+        }
         // return response()->json(['error' => false, 'data' => $advertisement]);
         // dd($request);
         // foreach ($images as $key => $image) {
