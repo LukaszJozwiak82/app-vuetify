@@ -61,12 +61,10 @@ class AdvertisementController extends Controller
             $imagePath = $user->email . '/images2';
             $thefile = \File::get($image);
             Storage::disk('uploads')->put($imagePath, $thefile);
-            // $file_name = $key . '.jpg';
-            // \Storage::disk('uploads')->put($file_name, $thefile);
             PostImage::create([
                 'advertisement_id' => $advertisement->id,
                 // 'advertisement_image_path' => '/uploads/' . $imagePath,
-                'advertisement_image_path' => '/uploads/' . $key,
+                'advertisement_image_path' => '/uploads/' . $imagePath,
                 'advertisement_image_caption' => $title,
             ]);
             // echo $image .  "  " . $imagePath . "<br>";
