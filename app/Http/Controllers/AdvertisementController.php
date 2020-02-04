@@ -46,13 +46,14 @@ class AdvertisementController extends Controller
         $user = Auth::user();
         $title = $request->title;
         $description = $request->description;
+        $price = $request->price;
         $images = $request->images;
 
         $advertisement = Advertisement::create([
             'title' => $title,
             'description' => $description,
             'user_id' => $user->id,
-            'price' => 1,
+            'price' => $price,
         ]);
 
         // //store images
@@ -69,7 +70,7 @@ class AdvertisementController extends Controller
         // foreach ($images as $key => $image) {
         //     echo $image."<br>" ;
         // }
-        return 'zapisano '.$title.$description;
+        return redirect("/");
     }
 
     /**

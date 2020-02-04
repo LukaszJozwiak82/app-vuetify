@@ -24,6 +24,8 @@
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                             <v-text-field
+                                v-model="price"
+                                name="price"
                                 label="Cena"
                                 placeholder="Cena"
                                 outlined
@@ -73,6 +75,7 @@ export default {
             imageList: [],
             title: "",
             description: "",
+            price: 0,
             csrf: window.Laravel.csrfToken
         };
     },
@@ -89,6 +92,7 @@ export default {
             let formData = new FormData();
             formData.append("title", this.title);
             formData.append("description", this.description);
+            formData.append("price", this.price);
             foreach(this.imageList, function(key, image) {
                 formData.append(`images[${key}]`, image);
             });
