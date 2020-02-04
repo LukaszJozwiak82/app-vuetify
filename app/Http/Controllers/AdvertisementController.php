@@ -58,9 +58,10 @@ class AdvertisementController extends Controller
 
         //store images
         foreach ($images as $key => $image) {
-            $imagePath = $user->email . '/images2';
-            $thefile = \File::get($image);
-            Storage::disk('uploads')->put($imagePath, $thefile);
+            $imagePath = $user->email;
+            // $thefile = \File::get($image);
+            Storage::disk('uploads')->put($imagePath, $image);
+            // Storage::put('img', $image);
             PostImage::create([
                 'advertisement_id' => $advertisement->id,
                 // 'advertisement_image_path' => '/uploads/' . $imagePath,

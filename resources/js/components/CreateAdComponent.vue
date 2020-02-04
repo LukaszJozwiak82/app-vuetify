@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-app>
-            <v-form v-bind:action="'/advertisement/store/'" method="POST">
+            <v-form v-bind:action="'/advertisement/store/'" method="POST" enctype="multipart/form-data">
                 <!-- <v-form> -->
                 <v-container>
                     <v-row>
@@ -35,6 +35,7 @@
                     <div>
                         <el-upload
                             name="images[]"
+                            type="file"
                             action="/"
                             list-type="picture-card"
                             :limit="3"
