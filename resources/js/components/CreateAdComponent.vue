@@ -1,7 +1,11 @@
 <template>
     <v-container>
         <v-app>
-            <v-form v-bind:action="'/advertisement/store/'" method="POST" enctype="multipart/form-data">
+            <v-form
+                v-bind:action="'/advertisement/store/'"
+                method="POST"
+                enctype="multipart/form-data"
+            >
                 <!-- <v-form> -->
                 <v-container>
                     <v-row>
@@ -47,17 +51,23 @@
                             <i class="el-icon-plus"></i>
                         </el-upload>
                     </div>
-                    <div class="my-2">
-                        <!-- <v-btn type="submit" color="warning" dark outlined @click="submit()">Zapisz</v-btn> -->
-                        <v-btn
-                            type="submit"
-                            color="warning"
-                            dark
-                            outlined
-                            @click="submit()"
-                            >Zapisz</v-btn
-                        >
-                    </div>
+                    <v-row>
+                        <div class="my-2">
+                            <!-- <v-btn type="submit" color="warning" dark outlined @click="submit()">Zapisz</v-btn> -->
+                            <v-btn
+                                type="submit"
+                                color="warning"
+                                dark
+                                outlined
+                                @click="submit()"
+                                >Zapisz</v-btn
+                            >
+
+                            <v-btn color="danger" href="/" outlined
+                                >Cofnij</v-btn
+                            >
+                        </div>
+                    </v-row>
                     <input type="hidden" name="_token" :value="csrf" />
                 </v-container>
             </v-form>
