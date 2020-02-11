@@ -57,18 +57,16 @@ class AdvertisementController extends Controller
         ]);
 
         //store images
-        foreach ($images as $key => $image) {
+        foreach ($images as $image) {
             $imagePath = $user->email;
-            // $thefile = \File::get($image);
-            Storage::disk('uploads')->put($imagePath, $image);
-            // Storage::put('img', $image);
+            // Storage::disk('uploads')->put($imagePath, $image);
+            Storage::put($imagePath, $image);
             PostImage::create([
                 'advertisement_id' => $advertisement->id,
-                // 'advertisement_image_path' => '/uploads/' . $imagePath,
                 'advertisement_image_path' => '/uploads/' . $imagePath,
                 'advertisement_image_caption' => $title,
             ]);
-            // echo $image .  "  " . $imagePath . "<br>";
+            // echo $image->getClientOriginalName();
         }
         // return response()->json(['error' => false, 'data' => $advertisement]);
         // dd($request);

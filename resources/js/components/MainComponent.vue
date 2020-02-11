@@ -3,14 +3,14 @@
         <v-app>
             <!-- <div class="d-flex child-flex flex-wrap"> -->
             <div
-                class="pb-4 mb-10 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start"
+                class="pb-2 mb-2 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start"
             >
                 <v-card
                     v-for="category in categories"
                     v-bind:key="category.id"
                     class="mx-auto pa-xs-1 mb-2 justify-center"
                     width="180"
-                    height="60"
+                    height="80"
                     outlined
                     raised
                     color="#f2f2f2"
@@ -24,14 +24,21 @@
                 </v-card>
             </div>
             <v-layout justify-center align-center>
-                <v-btn :href='"/advertisement/create"' x-large outlined color="success" dark>Dodaj ogłoszenie</v-btn>
+                <v-btn
+                    :href="'/advertisement/create'"
+                    x-large
+                    outlined
+                    color="success"
+                    dark
+                    >Dodaj ogłoszenie</v-btn
+                >
             </v-layout>
-            <v-layout justify-center align-center mb-2>
+            <v-layout justify-center align-center mb-1>
                 <v-icon class="mr-3">error_outline</v-icon>
                 <div>Najnowsze ogłoszenia</div>
             </v-layout>
             <div
-                class="pb-4 mb-10 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start"
+                class="pb-4 mb-6 d-flex align-content-center flex-wrap flex-md-wrap justify-start justify-xl-start justify-md-start"
             >
                 <v-card
                     v-for="advertisement in advertisements"
@@ -57,7 +64,22 @@
                     {{ user }}
                 </v-card>
             </div>
-            <footer-component :msg="message"/>
+            <img
+                src="storage/fjiipkTxIB8cVbmUsVZQHTzW8pMbfvZflrqAVYkH.jpeg"
+                alt="rrrrrrrr"
+                title="rrrr"
+                width="200"
+                height="auto"
+            />
+            <img
+                src="storage/admin@admin.pl/fjiipkTxIB8cVbmUsVZQHTzW8pMbfvZflrqAVYkH.jpeg"
+                alt="ccccc"
+                title="ccc"
+                width="200"
+                height="auto"
+            />
+            sdfgfgdhdh
+            <footer-component :msg="message" />
         </v-app>
     </v-container>
 </template>
