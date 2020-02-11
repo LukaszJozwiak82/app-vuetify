@@ -51,9 +51,22 @@
                     color="#f2f2f2"
                 >
                     <a v-bind:href="'#'">
-                        <v-card-title class="mt-6">{{
-                            advertisement.title
-                        }}</v-card-title>
+                        <v-card-title class="mt-1"
+                            >{{ advertisement.title }}
+                        </v-card-title>
+                        <div class="ml-4">
+                            <img
+                                :src="
+                                    'storage' +
+                                        advertisement.post_images[0]
+                                            .advertisement_image_path
+                                "
+                                alt="ccccc"
+                                title="ccc"
+                                width="150"
+                                height="auto"
+                            />
+                        </div>
                         <v-card-subtitle
                             >{{ advertisement.price }} PLN</v-card-subtitle
                         >
@@ -61,24 +74,11 @@
                             advertisement.description
                         }}</v-card-text>
                     </a>
-                    {{ user }}
+                    <div class="ml-4">
+                        {{ user }}
+                    </div>
                 </v-card>
             </div>
-            <img
-                src="storage/fjiipkTxIB8cVbmUsVZQHTzW8pMbfvZflrqAVYkH.jpeg"
-                alt="rrrrrrrr"
-                title="rrrr"
-                width="200"
-                height="auto"
-            />
-            <img
-                src="storage/admin@admin.pl/fjiipkTxIB8cVbmUsVZQHTzW8pMbfvZflrqAVYkH.jpeg"
-                alt="ccccc"
-                title="ccc"
-                width="200"
-                height="auto"
-            />
-            sdfgfgdhdh
             <footer-component :msg="message" />
         </v-app>
     </v-container>
@@ -123,6 +123,7 @@ export default {
         this.get_users_data();
         console.log("Component mounted.");
         console.log(this.user);
+        console.log(this.advertisements[0].post_images[0]);
     }
 };
 </script>
