@@ -31,3 +31,4 @@ Route::group(['prefix' => 'advertisement', 'middleware' => 'auth'], function () 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/advertisement/{advertisement}', 'AdvertisementController@show')->name('advertisement.show');

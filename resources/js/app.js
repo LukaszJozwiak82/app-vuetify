@@ -4,14 +4,14 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-import '@mdi/font/css/materialdesignicons.css'; // Ensure you are using css-loader
-import 'material-design-icons-iconfont/dist/material-design-icons.css';
-import axios from 'axios';
-import Vuetify from 'vuetify';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css'
-window.Vue = require('vue');
+require("./bootstrap");
+import "@mdi/font/css/materialdesignicons.css"; // Ensure you are using css-loader
+import "material-design-icons-iconfont/dist/material-design-icons.css";
+import axios from "axios";
+import Vuetify from "vuetify";
+import ElementUI from "element-ui";
+import "element-ui/lib/theme-chalk/index.css";
+window.Vue = require("vue");
 Vue.use(Vuetify);
 Vue.use(axios);
 Vue.use(ElementUI);
@@ -26,9 +26,22 @@ Vue.use(ElementUI);
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('main-component', require('./components/MainComponent.vue').default);
-Vue.component('footer-component', require('./components/FooterComponent.vue').default);
-Vue.component('createad-component', require('./components/CreateAdComponent.vue').default);
+Vue.component(
+    "main-component",
+    require("./components/MainComponent.vue").default
+);
+Vue.component(
+    "footer-component",
+    require("./components/FooterComponent.vue").default
+);
+Vue.component(
+    "createad-component",
+    require("./components/CreateAdComponent.vue").default
+);
+Vue.component(
+    "ad-show",
+    require("./components/Views/Advertisement/ShowComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -37,12 +50,12 @@ Vue.component('createad-component', require('./components/CreateAdComponent.vue'
  */
 
 const app = new Vue({
-    el: '#app',
-    vuetify : new Vuetify(),
+    el: "#app",
+    vuetify: new Vuetify(),
     icons: {
-        iconfont: 'mdi',
-        iconfont: 'md', // default - only for display purposes
+        iconfont: "mdi",
+        iconfont: "md" // default - only for display purposes
     },
-      iconfont: 'md',
-      iconfont: 'mdi',
+    iconfont: "md",
+    iconfont: "mdi"
 });

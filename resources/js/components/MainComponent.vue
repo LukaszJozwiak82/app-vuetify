@@ -50,7 +50,7 @@
                     raised
                     color="#f2f2f2"
                 >
-                    <a v-bind:href="'#'">
+                    <a v-bind:href="'/advertisement/' + advertisement.id">
                         <v-card-title class="mt-1"
                             >{{ advertisement.title }}
                         </v-card-title>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Advertisement;
 use App\PostImage;
+use App\Services\AdvertisementService;
 use Auth;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpKernel\HttpCache\Store;
@@ -14,10 +15,12 @@ class AdvertisementController extends Controller
 {
 
     private $advertisement;
+    private $advertisementService;
 
-    public function __construct(Advertisement $advertisement)
+    public function __construct(Advertisement $advertisement, AdvertisementService $advertisementService)
     {
         $this->advertisement = $advertisement;
+        $this->advertisementService = $advertisementService;
     }
 
     public function index()
@@ -84,7 +87,9 @@ class AdvertisementController extends Controller
      */
     public function show($id)
     {
-        //
+        $adv =  $this->advertisementService->show($id);
+        return view('advertisement.show', ['adv' => $adv]);
+        // dd($adv->post_images[0]->id);
     }
 
     /**
