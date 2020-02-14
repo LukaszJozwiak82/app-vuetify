@@ -42,6 +42,10 @@ Vue.component(
     "ad-show",
     require("./components/Views/Advertisement/ShowComponent.vue").default
 );
+Vue.component(
+    "admin-component",
+    require("./components/Views/Admin/LayoutComponent.vue").default
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -14,6 +14,7 @@ use App\User;
 */
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('pass', function () {
     $user = User::find(1);
@@ -26,6 +27,10 @@ Route::get('/', 'TestController@index')->name('test');
 Route::group(['prefix' => 'advertisement', 'middleware' => 'auth'], function () {
     Route::get('/create', 'AdvertisementController@create')->name('advertisement.create');
     Route::post('/store', 'AdvertisementController@store')->name('advertisement.store');
+});
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@index')->name('admin.index');
 });
 
 Auth::routes();

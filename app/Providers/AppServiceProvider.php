@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -21,5 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        View::composer('*', function ($view) {
+            $view->with('menuItems', ['a', 'b', 'c']);
+        });
     }
 }
