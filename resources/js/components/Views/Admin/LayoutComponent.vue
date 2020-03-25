@@ -39,9 +39,7 @@
 
         <v-app-bar color="success accent-4" height="50" app>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-            <v-toolbar-title>Page title</v-toolbar-title>
-
+            <v-toolbar-title>Admin</v-toolbar-title>
             <v-spacer></v-spacer>
         </v-app-bar>
 
