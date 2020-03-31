@@ -25,7 +25,13 @@
 
                 <v-divider></v-divider>
 
-                <v-list-item v-for="item in items" :key="item.title" link>
+                <v-list-item
+                    v-for="item in items"
+                    :key="item.title"
+                    link
+                    router
+                    :to="item.link"
+                >
                     <v-list-item-icon>
                         <v-icon>{{ item.icon }}</v-icon>
                     </v-list-item-icon>
@@ -48,7 +54,7 @@
         <v-content>
             <!-- Provides the application the proper gutter -->
             <v-container fluid>
-                test text
+                <router-view></router-view>
             </v-container>
             {{ mi[0] }}
         </v-content>
@@ -66,9 +72,13 @@ export default {
         return {
             drawer: true,
             items: [
-                { title: "Dashboard", icon: "mdi-view-dashboard" },
-                { title: "Photos", icon: "mdi-image" },
-                { title: "About", icon: "mdi-help-box" }
+                {
+                    title: "Dashboard",
+                    icon: "mdi-view-dashboard",
+                    link: "/"
+                },
+                { title: "Photos", icon: "mdi-image", link: "/" },
+                { title: "About", icon: "mdi-help-box", link: "/ads" }
             ],
             color: "success",
             colors: ["primary", "blue", "success", "red", "teal"],

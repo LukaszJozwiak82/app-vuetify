@@ -10,11 +10,13 @@ import "material-design-icons-iconfont/dist/material-design-icons.css";
 import axios from "axios";
 import Vuetify from "vuetify";
 import ElementUI from "element-ui";
+import VueRouter from "vue-router";
 import "element-ui/lib/theme-chalk/index.css";
 window.Vue = require("vue");
 Vue.use(Vuetify);
 Vue.use(axios);
 Vue.use(ElementUI);
+Vue.use(VueRouter);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -47,15 +49,29 @@ Vue.component(
     require("./components/Views/Admin/LayoutComponent.vue").default
 );
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+import Ads from "./components/Views/Admin/views/Ads";
+import Home from "./components/Views/Admin/views/Home";
+
+const router = new VueRouter({
+    mode: "history",
+    routes: [
+        {
+            path: "/",
+            name: "home",
+            component: Home
+        },
+        {
+            path: "/ads",
+            name: "ads",
+            component: Ads
+        }
+    ]
+});
 
 const app = new Vue({
     el: "#app",
     vuetify: new Vuetify(),
+    router,
     icons: {
         iconfont: "mdi",
         iconfont: "md" // default - only for display purposes
