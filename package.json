@@ -17,7 +17,7 @@
         "css-loader": "^3.3.2",
         "deepmerge": "^4.2.2",
         "fibers": "^4.0.2",
-        "jquery": "^3.2",
+        "jquery": "^3.5",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
         "material-design-icons-iconfont": "^5.0.1",
